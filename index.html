@@ -1,44 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Drogas Ficticias - Tienda Fantástica</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 </head>
 <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-background-link has-text-white p-3">
+        📋 integrantes
+      </h1>
 
-  <header>
-    <h1>Tienda de Drogas ESPAMHL</h1>
-    <p>Bienvenido al mercado más misterioso del universo</p>
-  </header>
+      <div class="box">
+        <div class="columns is-variable is-3">
+          <div class="column is-5">
+            <input id="nombres" class="input" type="text" >
+          </div>
+          
+          </div>
+          <div class="column is-6">
+            <input id="apellidos" class="input" type="text" >
+            </div>
+          <div class="column is-3">
+            <input id="cedula" class="input" type="number">
+          </div>
+          <div class="column is-5">
+            <input id="edad" class="input" type="number" >
+          </div>
+          <div class="column is-4">
+            <input id="tarea" class="input" type="text" >
+          </div>
+          <div class="column is-1">
+            <button id="agregar" class="button is-primary is-fullwidth">+</button>
+          
+          </div>
+        </div>
+      </div>
 
-  <div class="container">
-    <div class="card">
-      <img src="img/descarga (2).jpg" alt="Maria" class="product-img">
-      <h2>Marihuana</h2>
-      <p>LA mejor droga que existeeeeeeeeeee.</p>
+      <div class="table-container">
+        <table class="table is-fullwidth is-striped is-hoverable" id="tablaTareas">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>nombre</th>
+              <th>apellidos</th>
+              <th>cedula</th>
+              <th>edad</th>
+              <th>tarea</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTabla">
+           
+          </tbody>
+        </table>
+        <p id="totalMiembros" class="has-text-right">Total: 0 miembros</p>
+      </div>
     </div>
-    <div class="card">
-      <img src="img/2222.jpg" alt="coca" class="imagen2">
-      <h2>Cocaina</h2>
-      <p>La mejor famosa por el patron del mal "Pablo Escobar"</p>
-    </div>
-    <div class="card">
-      <img src="img/tusis.jpg" alt="tussi"class="imagen3">
-      <h2>Tussi</h2>
-      <p>Como dice dei v , tiene el totito rosa Tussi</p>
-    </div>
-    <div class="card">
-      <img src="img/crii.jpg" alt="Cripi"class="imagen4">
-      <h2>Cripi</h2>
-      <p>Derivada de la Marihuana</p>
-    </div>
-  </div>
+  </section>
 
-  <div class="links">
-    <a href="empresa.html">Mision y vision de la empresa</a>
-    <a href="contacto.html">Contacto</a>
-  </div>
+  <script>
+    const botonAgregar = document.getElementById("agregar");
+    const cuerpoTabla = document.getElementById("cuerpoTabla");
+    const totalTareas = document.getElementById("totalTareas");
 
+    var contador = 0;
+
+    botonAgregar.addEventListener("click", () => {
+      var nombres = document.getElementById("nombres").value.trim();
+      var apellidos = document.getElementById("apellidos").value;
+      var cedula = document.getElementById("cedula").value;
+      var edad = document.getElementById("edad").value;
+      var tarea = document.getElementById("tarea").value;
+     
+
+      contador++;
+
+      const fila = document.createElement("tr");
+
+      
+
+      fila.innerHTML = `
+        <td>${contador}</td>
+        <td>${nombres}</td>
+        <td>${apellidos}</td>
+        <td>${cedula}</td>
+        <td>${edad}</td>
+        <td>${tarea}</td>`;
+        
+
+      cuerpoTabla.appendChild(fila);
+
+     
+      totalMiembros.textContent = `Total: ${contador} Miembros`;
+
+    
+     
+    });
+  </script>
 </body>
 </html>
+
