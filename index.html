@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-background-link has-text-white p-3">
+        📋 integrantes
+      </h1>
+
+      <div class="box">
+        <div class="columns is-variable is-3">
+          <div class="column is-5">
+            <label for=" "> Nombre: </label>
+            <input id="nombres" class="input" type="text" >
+          </div>
+          
+          </div>
+          <div class="column is-6">
+            <label for="">Apellido: </label>
+            <input id="apellidos" class="input" type="text" >
+            </div>
+          <div class="column is-3">
+            <label for="">Cedula: </label>
+            <input id="cedula" class="input" type="number">
+          </div>
+          <div class="column is-5">
+            <label for="">Edad: </label>
+            <input id="edad" class="input" type="number" >
+          </div>
+          <div class="column is-4">
+            <label for="">tarea</label>
+            <input id="tarea" class="input" type="text" >
+          </div>
+          <div class="column is-1">
+            <button id="agregar" class="button is-primary is-fullwidth">+</button>
+          
+          </div>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table is-fullwidth is-striped is-hoverable" id="tablaTareas">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>nombre</th>
+              <th>apellidos</th>
+              <th>cedula</th>
+              <th>edad</th>
+              <th>tarea</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTabla">
+           
+          </tbody>
+        </table>
+        <p id="totalMiembros" class="has-text-right">Total: 0 miembros</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js">
+   
+  </script>
+</body>
+</html>
+
