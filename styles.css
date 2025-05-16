@@ -13,3 +13,19 @@ table {
   margin: 20px auto;
   padding: 10px;
 }
+div {
+  text-align: center;
+  margin: 20px auto;
+}
+input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #d19f0b;
+}
+input[type="number"] {
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #d19f0b;
+}
